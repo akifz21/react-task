@@ -1,5 +1,10 @@
 import React from 'react'
 import AboutItem from '../components/AboutItem'
+import image1 from '../../../assets/images/landing-image-1.png'
+import image2 from '../../../assets/images/landing-image-2.png'
+import image3 from '../../../assets/images/landing-image-3.png'
+import image4 from '../../../assets/images/landing-image-4.png'
+
 
 export default function AboutSection() {
 
@@ -27,7 +32,7 @@ export default function AboutSection() {
     ]
 
     return (
-        <div id='about' className='h-screen flex flex-row px-32 pt-28 '>
+        <div id='about' className='h-screen flex flex-row md:px-12 xl:px-32 pt-28 '>
             <div className='w-1/2 flex flex-col'>
                 <div className='w-3/4 flex flex-col gap-5'>
                     <h1 className='font-bold text-7xl text-home-text'>About us</h1>
@@ -42,7 +47,16 @@ export default function AboutSection() {
                 </div>
             </div>
             <div className='w-1/2'>
-
+                <div className='relative top-20 flex flex-row gap-5'>
+                    <div className='grid absolute top-12 grid-cols-1 gap-5'>
+                        <img src={image1} alt="" />
+                        <img src={image2} alt="" />
+                    </div>
+                    <div className='grid absolute right-10 gap-5 grid-cols-1'>
+                        <img src={image4} alt="" />
+                        <img src={image3} alt="" />
+                    </div>
+                </div>
             </div>
         </div>
     )
