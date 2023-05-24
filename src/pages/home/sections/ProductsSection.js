@@ -35,20 +35,22 @@ export default function ProductsSection() {
     };
 
     return (
-        <div id='products' className='h-screen flex flex-col px-32 items-center'>
-            <h1 className='text-home-text mt-32 text-5xl font-bold'>Products</h1>
+        <div id='products' className='h-screen flex flex-col px-32 py-20 items-center'>
+            <h1 className='text-home-text top-32 text-5xl font-bold'>Products</h1>
             <Categories />
-            <div class="grid mt-20 grid-cols-4 gap-20 pb-10 w-full">
-                {
-                    visibleData.map((product) => (
-                        <ProductCard title={product.title} price={product.price} image={product.thumbnail} />
-                    ))
-                }
-            </div>
-            <div className='flex flex-row gap-5 pb-5 text-xl font-semibold'>
+            <div className='flex flex-row items-center  gap-5 justify-around'>
                 <button onClick={handlePrevPage}>Prev</button>
+                <div class="grid mt-20 grid-cols-4 gap-20 w-full">
+                    {
+                        visibleData.map((product) => (
+                            <ProductCard title={product.title} price={product.price} image={product.thumbnail} />
+                        ))
+                    }
+                </div>
                 <button onClick={handleNextPage}>Next</button>
             </div>
+
+
         </div>
     )
 }

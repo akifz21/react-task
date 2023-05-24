@@ -32,7 +32,7 @@ export default function AboutSection() {
     ]
 
     return (
-        <div id='about' className='h-screen flex flex-row md:px-12 xl:px-32 pt-28 '>
+        <div id='about' className='h-screen flex flex-row md:px-12 xl:px-32 pt-20 '>
             <div className='w-1/2 flex flex-col'>
                 <div className='w-3/4 flex flex-col gap-5'>
                     <h1 className='font-bold text-7xl text-home-text'>About us</h1>
