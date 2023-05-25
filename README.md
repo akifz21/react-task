@@ -1,3 +1,15 @@
+## Live at 
+
+https://react-task-akifz21.vercel.app/
+
+## Home page template :
+ https://www.figma.com/community/file/1130168399971603453
+
+## Product Page Template : 
+https://www.figma.com/community/file/1104711681018892132
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
