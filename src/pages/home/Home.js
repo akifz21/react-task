@@ -4,6 +4,8 @@ import HomeSection from './sections/HomeSection'
 import AboutSection from './sections/AboutSection'
 import ProductsSection from './sections/ProductsSection'
 import TestimonialSection from './sections/TestimonialSection'
+import ContactSection from './sections/ContactSection'
+import HomePageFooter from '../../components/HomePageFooter'
 
 export default function Home() {
     return (
@@ -13,6 +15,8 @@ export default function Home() {
             <AboutSection />
             <ProductsSection />
             <TestimonialSection />
+            <ContactSection />
+            <HomePageFooter />
         </>
     )
 }

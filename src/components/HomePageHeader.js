@@ -36,7 +36,7 @@ export default function HomePageHeader() {
                 }
             </ul>
             <div className='flex flex-row gap-5 h-1/2 items-center'>
-                <button>Contact</button>
+                <a href='#contact'>Contact</a>
                 <button className='bg-orange-600 p-2 px-5 text-white'>Buy Online</button>
             </div>
         </div >
