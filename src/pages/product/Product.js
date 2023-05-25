@@ -5,6 +5,7 @@ import SponsoredItemsSection from './sections/SponsoredItemsSection'
 import ProductPageFooter from '../../components/ProductPageFooter'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ScrollToTop from '../../utils/ScrollToTop'
 
 export default function Product() {
 
@@ -24,6 +25,7 @@ export default function Product() {
 
     return (
         <>
+            <ScrollToTop />
             <ProductPageHeader />
             <ProductSection product={product} productImages={productImages} />
             <DescriptionSection image={product.thumbnail} />
