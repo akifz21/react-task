@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 
+
 const ProductContext = createContext()
 
 export const ProductProvider = ({ children }) => {
@@ -9,10 +10,20 @@ export const ProductProvider = ({ children }) => {
     const [itemsPerPage, setItemsPerPage] = useState(8)
 
     useEffect(() => {
-        fetch("https://dummyjson.com/products")
-            .then((res) => res.json())
-            .then((json) => setProducts(json.products))
-    }, [])
+        const storedData = localStorage.getItem('products');
+        if (storedData) {
+            setProducts(JSON.parse(storedData));
+        }
+
+        fetch('https://dummyjson.com/products')
+            .then(response => response.json())
+            .then(apiData => {
+                setProducts(apiData.products);
+                localStorage.setItem('products', JSON.stringify(apiData.products));
+            });
+    }, []);
+
+
 
     const totalPage = products.length / itemsPerPage
     const startIndex = (currentPage - 1) * itemsPerPage;

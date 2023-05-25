@@ -8,7 +8,7 @@ import profile from '../assets/images/Ellipse2.png'
 
 export default function ProductPageHeader() {
     return (
-        <div className='flex flex-row items-center justify-around h-20 px-32 shadow-xl rounded-b-3xl fixed w-full '>
+        <div className='flex flex-row fixed bg-white items-center justify-around h-20 px-32 shadow-xl rounded-b-3xl w-full '>
             <div>
                 <Logo />
             </div>

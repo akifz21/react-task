@@ -30,8 +30,8 @@ export default function HomePageHeader() {
             </div>
             <ul className='flex flex-row gap-5'>
                 {
-                    links.map((link) => (
-                        <a href={"#" + link.path}>{link.name}</a>
+                    links.map((link, index) => (
+                        <a key={index} href={"#" + link.path}>{link.name}</a>
                     ))
                 }
             </ul>
