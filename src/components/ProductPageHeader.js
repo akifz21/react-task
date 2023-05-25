@@ -7,6 +7,7 @@ import { ReactComponent as GridIcon } from "../assets/svgs/li_layout-grid.svg"
 import profile from '../assets/images/Ellipse2.png'
 import { useContext } from "react"
 import CartContext from "../context/CartContext"
+import { Link } from "react-router-dom"
 
 export default function ProductPageHeader() {
     const { products, totalPrice } = useContext(CartContext)
@@ -31,16 +32,19 @@ export default function ProductPageHeader() {
                     <WishList />
                     <p>Wishlist</p>
                 </span>
-                <span className="flex  flex-row items-center gap-3">
-                    <div className="relative">
-                        <div className="absolute bg-blue-700 h-4 text-xs w-4 -top-2 -right-2 text-center  text-white rounded-full">{products.length}</div>
-                        <Cart />
-                    </div>
-                    <span>
-                        <p className="font-semibold">My cart</p>
-                        <p>{totalPrice}$</p>
+                <Link to={"/cart"}>
+
+                    <span className="flex  flex-row items-center gap-3">
+                        <div className="relative">
+                            <div className="absolute bg-blue-700 h-4 text-xs w-4 -top-2 -right-2 text-center  text-white rounded-full">{products.length}</div>
+                            <Cart />
+                        </div>
+                        <span>
+                            <p className="font-semibold">My cart</p>
+                            <p className="text-blue-700 font-bold">${totalPrice}</p>
+                        </span>
                     </span>
-                </span>
+                </Link>
                 <img src={profile} alt="" />
                 <UpdownArrow />
             </div>

@@ -10,7 +10,7 @@ import CartContext from '../../../context/CartContext'
 
 export default function ProductSection({ product, productImages }) {
 
-    const { addToCart, removeFromCart, products } = useContext(CartContext)
+    const { addToCart, removeFromCart, products, handleBuy } = useContext(CartContext)
 
     return (
         <div className='h-screen flex flex-col gap-10 px-32'>
@@ -78,7 +78,7 @@ export default function ProductSection({ product, productImages }) {
                             <p className='text-blue-700 text-xl font-semibold'>1,241 Sold in the last 24 hours</p>
                         </div>
                         <div className='flex flex-row gap-10 items-center'>
-                            <button className='bg-blue-700 p-3 rounded-lg font-bold text-white w-1/2'>Buy it now</button>
+                            <button onClick={() => handleBuy()} className='bg-blue-700 p-3 rounded-lg font-bold text-white w-1/2'>Buy it now</button>
                             {
                                 products.includes(product)
                                     ?

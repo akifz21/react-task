@@ -34,12 +34,32 @@ export const CartProvider = ({ children }) => {
         setTotalPrice(prev => prev - product.price)
     }
 
+    const handleBuy = () => {
+        alert("Successfully")
+    }
+
+    const handleDownload = () => {
+        const data = JSON.parse(localStorage.getItem("cart"));
+        const jsonData = JSON.stringify(data);
+        const blob = new Blob([jsonData], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'data.json';
+        link.click();
+
+        URL.revokeObjectURL(url);
+    };
+
 
     const values = {
         products,
         addToCart,
         removeFromCart,
-        totalPrice
+        totalPrice,
+        handleBuy,
+        handleDownload
     }
 
     return <CartContext.Provider value={values}>{children}</CartContext.Provider>

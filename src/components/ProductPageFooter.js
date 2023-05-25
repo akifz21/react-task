@@ -38,7 +38,7 @@ export default function ProductPageFooter() {
                     </ul>
                 </div>
             </div>
-            <div className="flex flex-row p-10 justify-between">
+            <div className="flex flex-row p-5 justify-between">
                 <p>© 2022, All rights reserved</p>
                 <img src={payment} alt="" />
             </div>
