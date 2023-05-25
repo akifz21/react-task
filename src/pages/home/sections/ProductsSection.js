@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react'
 import Categories from '../components/Categories'
 import ProductCard from '../components/ProductCard'
 import ProductContext from '../../../context/ProductContext'
+import { Link } from 'react-router-dom'
 
 
 export default function ProductsSection() {
@@ -18,7 +19,7 @@ export default function ProductsSection() {
                 <div className="grid mt-20 grid-cols-4 gap-20 w-full">
                     {
                         visibleData.map((product) => (
-                            <ProductCard key={product.id} title={product.title} price={product.price} image={product.thumbnail} />
+                            <Link key={product.id} to={`/product/${product.id}`}><ProductCard title={product.title} price={product.price} image={product.thumbnail} /></Link>
                         ))
                     }
                 </div>

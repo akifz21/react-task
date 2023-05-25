@@ -30,7 +30,7 @@ export default function ContactSection() {
                             <input className='border w-full border-black p-3' placeholder='Last name' type="text" />
                         </div>
                         <input className='border border-black p-3' placeholder='Email address' type="text" />
-                        <textarea rows={10} className='border border-black p-3'>Message</textarea>
+                        <textarea rows={10} className='border border-black p-3' placeholder='Message' />
                         <button className='bg-orange-500 text-white text-center p-3'>Send message</button>
                     </form>
                 </div>

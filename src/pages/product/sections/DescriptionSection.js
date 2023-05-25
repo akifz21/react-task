@@ -1,5 +1,5 @@
 
-export default function DescriptionSection() {
+export default function DescriptionSection({ image }) {
     return (
         <div className="flex flex-col gap-20 h-[75vh] py-20">
             <div className="flex flex-row gap-10 h-20 px-32 items-center bg-blue-50">
@@ -10,8 +10,8 @@ export default function DescriptionSection() {
             </div>
             <div className="flex flex-row gap-20 px-32">
                 <div>
-                    <div className='h-52 w-52 bg-blue-100 rounded-lg'>
-                        s
+                    <div className='h-52 flex justify-center items-center w-52 bg-blue-100 rounded-lg'>
+                        <img src={image} alt="" />
                     </div>
                 </div>
                 <div>
