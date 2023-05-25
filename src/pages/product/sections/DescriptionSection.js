@@ -11,7 +11,7 @@ export default function DescriptionSection({ image }) {
             <div className="flex flex-row gap-20 px-32">
                 <div>
                     <div className='h-52 flex justify-center items-center w-52 bg-blue-100 rounded-lg'>
-                        <img src={image} alt="" />
+                        <img src={image} className="h-3/4" alt="" />
                     </div>
                 </div>
                 <div>

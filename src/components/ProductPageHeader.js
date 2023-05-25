@@ -5,8 +5,11 @@ import { ReactComponent as WishList } from "../assets/svgs/Group1.svg"
 import { ReactComponent as Cart } from "../assets/svgs/li_shopping-cart.svg"
 import { ReactComponent as GridIcon } from "../assets/svgs/li_layout-grid.svg"
 import profile from '../assets/images/Ellipse2.png'
+import { useContext } from "react"
+import CartContext from "../context/CartContext"
 
 export default function ProductPageHeader() {
+    const { products, totalPrice } = useContext(CartContext)
     return (
         <div className='flex flex-row fixed bg-white items-center justify-around h-20 px-32 shadow-xl rounded-b-3xl w-full '>
             <div>
@@ -30,12 +33,12 @@ export default function ProductPageHeader() {
                 </span>
                 <span className="flex  flex-row items-center gap-3">
                     <div className="relative">
-                        <div className="absolute bg-blue-700 h-4 text-xs w-4 -top-2 -right-2 text-center  text-white rounded-full">0</div>
+                        <div className="absolute bg-blue-700 h-4 text-xs w-4 -top-2 -right-2 text-center  text-white rounded-full">{products.length}</div>
                         <Cart />
                     </div>
                     <span>
                         <p className="font-semibold">My cart</p>
-                        <p>price</p>
+                        <p>{totalPrice}$</p>
                     </span>
                 </span>
                 <img src={profile} alt="" />

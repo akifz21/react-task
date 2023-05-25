@@ -5,9 +5,12 @@ import { ReactComponent as EmptyStar } from '../../../assets/svgs/Star5.svg'
 import { ReactComponent as CheckMark } from '../../../assets/svgs/check-mark.svg'
 import groupImage from '../../../assets/images/Group-image.png'
 import ProductCategory from '../components/ProductCategory'
+import { useContext } from 'react'
+import CartContext from '../../../context/CartContext'
 
 export default function ProductSection({ product, productImages }) {
 
+    const { addToCart, removeFromCart, products } = useContext(CartContext)
 
     return (
         <div className='h-screen flex flex-col gap-10 px-32'>
@@ -76,7 +79,17 @@ export default function ProductSection({ product, productImages }) {
                         </div>
                         <div className='flex flex-row gap-10 items-center'>
                             <button className='bg-blue-700 p-3 rounded-lg font-bold text-white w-1/2'>Buy it now</button>
-                            <button className='bg-blue-200 p-3 rounded-lg font-bold text-blue-700 w-1/2'>Add To Cart</button>
+                            {
+                                products.includes(product)
+                                    ?
+                                    <button onClick={() => removeFromCart(product)} className='bg-red-200 p-3 rounded-lg font-bold text-red-700 w-1/2'>
+                                        Remove From Cart
+                                    </button>
+                                    :
+                                    <button onClick={() => addToCart(product)} className='bg-blue-200 p-3 rounded-lg font-bold text-blue-700 w-1/2'>
+                                        Add To Cart
+                                    </button>
+                            }
                         </div>
                     </div>
 
