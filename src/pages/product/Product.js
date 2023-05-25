@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import ProductPageHeader from '../../components/ProductPageHeader'
 import ProductSection from './sections/ProductSection'
-import AboutSection from './sections/AboutSection'
+import DescriptionSection from './sections/DescriptionSection'
 
 export default function Product() {
     const { id } = useParams()
@@ -10,7 +10,7 @@ export default function Product() {
         <>
             <ProductPageHeader />
             <ProductSection />
-            <AboutSection />
+            <DescriptionSection />
         </>
     )
 }
