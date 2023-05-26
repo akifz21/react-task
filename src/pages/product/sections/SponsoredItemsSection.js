@@ -9,7 +9,7 @@ export default function SponsoredItemsSection() {
     const { handleNextPage, handlePrevPage, visibleData, setItemsPerPage } = useContext(ProductContext)
     useEffect(() => {
         setItemsPerPage(5)
-    })
+    }, [])
 
     return (
         <div className='flex flex-col gap-10 px-32 h-[60vh]'>

@@ -9,7 +9,7 @@ export default function ProductsSection() {
     const { handleNextPage, handlePrevPage, visibleData, setItemsPerPage } = useContext(ProductContext)
     useEffect(() => {
         setItemsPerPage(8)
-    })
+    }, [])
     return (
         <div id='products' className='h-screen flex flex-col px-32 py-20  items-center'>
             <h1 className='text-home-text top-32 text-5xl font-bold'>Products</h1>
